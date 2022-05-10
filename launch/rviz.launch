@@ -1,7 +1,7 @@
 <launch>
 
 
-  <param name="robot_description" textfile="$(find robot_description)/urdf/model.urdf.xacro" />
+  <param name="robot_description" textfile="$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro" />
 
   <node name="robot_state_publisher_" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
@@ -9,6 +9,6 @@
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
  
 
-  <node name="rviz" pkg="rviz" type="rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_description)/rviz/model.rviz" />
  
 </launch>
