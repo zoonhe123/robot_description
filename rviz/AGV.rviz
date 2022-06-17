@@ -7,6 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /TF1
+        - /TF1/Frames1
         - /Odometry1
         - /LaserScan1
       Splitter Ratio: 0.5
@@ -29,7 +31,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -65,6 +67,16 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        back_rotate_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        back_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         base_footprint:
           Alpha: 1
           Show Axes: false
@@ -75,6 +87,16 @@ Visualization Manager:
           Show Trail: false
           Value: true
         base_scan:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_rotate_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -105,15 +127,21 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        back_rotate_link:
+          Value: false
+        back_wheel_link:
+          Value: false
         base_footprint:
           Value: true
         base_link:
-          Value: false
+          Value: true
         base_scan:
+          Value: true
+        front_rotate_link:
+          Value: false
+        front_wheel_link:
           Value: false
         imu_link:
-          Value: false
-        odom:
           Value: true
         wheel_left_link:
           Value: false
@@ -125,17 +153,22 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_footprint:
-            base_link:
-              base_scan:
+        base_footprint:
+          base_link:
+            back_rotate_link:
+              back_wheel_link:
                 {}
-              imu_link:
+            base_scan:
+              {}
+            front_rotate_link:
+              front_wheel_link:
                 {}
-              wheel_left_link:
-                {}
-              wheel_right_link:
-                {}
+            imu_link:
+              {}
+            wheel_left_link:
+              {}
+            wheel_right_link:
+              {}
       Update Interval: 0
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -204,7 +237,7 @@ Visualization Manager:
   Global Options:
     Background Color: 85; 87; 83
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -228,7 +261,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 11.389641761779785
+      Distance: 2.161647319793701
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -243,10 +276,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4747964143753052
+      Pitch: 0.40520161390304565
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.1303956508636475
+      Yaw: 0.4553791284561157
     Saved: ~
 Window Geometry:
   Displays:
@@ -264,5 +297,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1267
-  X: 825
-  Y: 109
+  X: 653
+  Y: 79
