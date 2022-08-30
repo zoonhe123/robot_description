@@ -176,7 +176,7 @@
 
 
   <link
-    name="imu_link">
+    name="camera_link">
     <inertial>
       <origin
         xyz="-0.20152 -.0019616 -0.0175"
@@ -224,7 +224,7 @@
     <parent
       link="base_link" />
     <child
-      link="imu_link" />
+      link="camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
