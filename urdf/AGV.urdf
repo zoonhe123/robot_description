@@ -17,17 +17,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.000147960478478083 3.47139655930324E-05 -0.00150000000000011"
+        xyz="0.00109242454391657 -2.60058587002593E-05 -0.0128047227127579"
         rpy="0 0 0" />
       <mass
-        value="0.38435995228823" />
+        value="3.47951537357257" />
       <inertia
-        ixx="0.00460412949362981"
-        ixy="-1.97418608446194E-09"
-        ixz="-7.79835858007088E-19"
-        iyy="0.00445919737361735"
-        iyz="2.96249984847952E-19"
-        izz="0.00906275032731873" />
+        ixx="0.0283503032589176"
+        ixy="1.40187790352864E-06"
+        ixz="-6.43285437919403E-11"
+        iyy="0.029742768517206"
+        iyz="-1.79370261167301E-11"
+        izz="0.0577998837977604" />
     </inertial>
 
     <visual>
@@ -41,7 +41,7 @@
       <material
         name="">
         <color
-          rgba="0.0 0.0 0.0 1" />
+          rgba="0.745098039215686 0.737254901960784 0.729411764705882 1" />
       </material>
     </visual>
 
@@ -61,17 +61,17 @@
     name="wheel_left_link">
     <inertial>
       <origin
-        xyz="-3.99818811628942E-08 0.385619590514504 -1.18655837960668E-07"
+        xyz="9.83472570771662E-18 0.00728844339005719 6.93889390390723E-17"
         rpy="0 0 0" />
       <mass
-        value="0.0496616978661662" />
+        value="0.0848957004604736" />
       <inertia
-        ixx="2.03382881443977E-05"
-        ixy="-2.23197649799962E-11"
-        ixz="5.49796094869999E-11"
-        iyy="3.50786037793918E-05"
-        iyz="3.55422342984138E-11"
-        izz="2.03381249786203E-05" />
+        ixx="7.49074965198782E-05"
+        ixy="-4.10033560387089E-20"
+        ixz="-1.16910573539205E-20"
+        iyy="0.000130222848529084"
+        iyz="4.77841065602832E-19"
+        izz="7.49074965198782E-05" />
     </inertial>
 
     <visual>
@@ -105,8 +105,8 @@
     name="wheel_left_joint"
     type="continuous">
     <origin
-      xyz="0 -0.186 -0.0387"
-      rpy="0 0 0" />
+      xyz="0.00016087 0.16232 -0.0665"
+      rpy="0 0 -0.00099109" />
     <parent
       link="base_link" />
     <child
@@ -120,17 +120,17 @@
     name="wheel_right_link">
     <inertial>
       <origin
-        xyz="-1.23757694208339E-07 -0.385619590514504 1.90208277184301E-08"
+        xyz="1.72506873414949E-16 -0.00728844339005699 -2.08166817117217E-17"
         rpy="0 0 0" />
       <mass
-        value="0.0496616978661661" />
+        value="0.0848957004604734" />
       <inertia
-        ixx="2.03382043208664E-05"
-        ixy="-2.13091183277867E-11"
-        ixz="9.83539765475893E-11"
-        iyy="3.50786037793918E-05"
-        iyz="3.61572095608502E-11"
-        izz="2.03382088021516E-05" />
+        ixx="7.4907496519878E-05"
+        ixy="-3.29077335789557E-19"
+        ixz="-8.56977026080893E-21"
+        iyy="0.000130222848529083"
+        iyz="7.6497990049025E-22"
+        izz="7.4907496519878E-05" />
     </inertial>
 
     <visual>
@@ -164,8 +164,8 @@
     name="wheel_right_joint"
     type="continuous">
     <origin
-      xyz="0 0.186 -0.0387"
-      rpy="0 0 0" />
+      xyz="-0.00016087 -0.16232 -0.0665"
+      rpy="0 0 -0.00099109" />
     <parent
       link="base_link" />
     <child
@@ -176,20 +176,20 @@
 
 
   <link
-    name="camera_link">
+    name="imu_link">
     <inertial>
       <origin
-        xyz="-0.20152 -.0019616 -0.0175"
+        xyz="-2.05320786414442E-18 6.93889390390723E-18 0.0125"
         rpy="0 0 0" />
       <mass
-        value="3.64288404677104E-08" />
+        value="0.000289811922293658" />
       <inertia
-        ixx="2.33944458101369E-11"
-        ixy="2.12048079073072E-13"
-        ixz="1.01671768768941E-14"
-        iyy="3.4987401662519E-12"
-        iyz="1.74566371036128E-15"
-        izz="2.35952710883406E-11" />
+        ixx="1.57326817116465E-08"
+        ixy="0"
+        ixz="3.60038419913663E-25"
+        iyy="1.57326817116465E-08"
+        iyz="-2.54401519141024E-24"
+        izz="1.27662151770356E-09" />
     </inertial>
     <visual>
       <origin
@@ -219,12 +219,12 @@
   
   <joint name="imu_joint" type="fixed">
     <origin
-      xyz="0.20152 -0.0019616 0.0175"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
-      link="camera_link" />
+      link="imu_link" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -234,17 +234,17 @@
     name="base_scan">
     <inertial>
       <origin
-        xyz="-0.132 0.0017476 -0.083"
+        xyz="-0.000127229355419478 1.31350068537095E-07 0.019460782503022"
         rpy="0 0 0" />
       <mass
-        value="0.166060934057212" />
+        value="0.166053843630804" />
       <inertia
-        ixx="7.69218590206876E-05"
-        ixy="-3.96070809302084E-12"
-        ixz="2.33735444912028E-07"
-        iyy="7.6439713089401E-05"
-        iyz="3.8565965123822E-12"
-        izz="0.000108595171347802" />
+        ixx="7.69193007417122E-05"
+        ixy="-4.95548703593643E-10"
+        ixz="2.37676143504077E-07"
+        iyy="7.64310598769666E-05"
+        iyz="-2.37005623379629E-10"
+        izz="0.000108589049493822" />
     </inertial>
 
     <visual>
@@ -278,7 +278,7 @@
     name="scan_joint"
     type="fixed">
     <origin
-      xyz="0.132 -0.0017476 0.083"
+      xyz="0.132 -0.00013082 0.053"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -293,25 +293,25 @@
   <link name="front_rotate_link">
     <inertial>
       <origin
-        xyz="-0.0164954514095244 -8.32667268468867E-17 -0.0127446770115047"
+        xyz="-0.012247856619052 2.63677968348475E-16 -0.0258423527037026"
         rpy="0 0 0" />
       <mass
-        value="0.023917826288437" />
+        value="0.134968786413858" />
       <inertia
-        ixx="8.2007131270127E-06"
-        ixy="0"
-        ixz="-1.86482418604573E-06"
-        iyy="9.0041305189012E-06"
-        iyz="-4.49597492003343E-22"
-        izz="1.11714136137616E-05" />
+        ixx="0.000132736560537161"
+        ixy="2.05670187505185E-20"
+        ixz="-1.16913015315812E-05"
+        iyy="0.000108905111851544"
+        iyz="1.6991854324779E-21"
+        izz="0.00016431082681564" />
     </inertial>
-    
+
     <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/front_rotate.STL" />
+        <mesh filename="package://robot_description/meshes/front_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
@@ -323,7 +323,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/front_rotate.STL" />
+        <mesh filename="package://robot_description/meshes/front_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -331,31 +331,31 @@
 
   <joint name="front_rotate_joint" type="continuous">
     <origin
-      xyz="0.1385 0 -0.00985"
-      rpy="0 0 1.0273" />
+      xyz="0.122 -0.00012091 -0.015"
+      rpy="0 0 0" />
     <parent 
       link="base_link" />
     <child 
       link="front_rotate_link" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
   </joint>
 
 
   <link name="front_wheel_link">
     <inertial>
       <origin
-        xyz="-1.80411241501588E-16 -1.11022302462516E-16 1.38777878078145E-17"
+        xyz="0 2.70616862252382E-16 -6.93889390390723E-18"
         rpy="0 0 0" />
       <mass
-        value="0.0469863288657831" />
+        value="0.192670881607509" />
       <inertia
-        ixx="9.52959905284745E-06"
-        ixy="-4.2351647362715E-21"
-        ixz="-1.96470150119616E-21"
-        iyy="1.44156278093498E-05"
-        iyz="-1.55998282963887E-21"
-        izz="9.52959905284745E-06" />
+        ixx="7.63146365292796E-05"
+        ixy="1.19769135252778E-19"
+        ixz="2.02825221494103E-21"
+        iyy="0.00013627319824331"
+        iyz="-8.12098592530515E-20"
+        izz="7.63146365292795E-05" />
     </inertial>
 
     <visual>
@@ -363,7 +363,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/front_wheel.STL" />
+        <mesh filename="package://robot_description/meshes/f_wheel_link.STL" />
       </geometry>
       <material
         name="">
@@ -377,7 +377,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/front_wheel.STL" />
+        <mesh filename="package://robot_description/meshes/f_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -385,14 +385,14 @@
 
   <joint name="front_wheel_joint" type="continuous">
     <origin
-      xyz="-0.033 0 -0.03635"
+      xyz="0.019817 0 -0.059"
       rpy="0 0 0" />
     <parent
       link="front_rotate_link" />
     <child
       link="front_wheel_link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
   </joint>
 
 
@@ -400,17 +400,17 @@
     name="back_rotate_link">
     <inertial>
       <origin
-        xyz="0.0164954514095245 0 0.0127446770115048"
+        xyz="0.0122478566190519 -2.4980018054066E-16 -0.0258423527037026"
         rpy="0 0 0" />
       <mass
-        value="0.023917826288437" />
+        value="0.134968786413858" />
       <inertia
-        ixx="8.20071312701268E-06"
-        ixy="1.27054942088145E-21"
-        ixz="-1.86482418604572E-06"
-        iyy="9.00413051890118E-06"
-        iyz="-1.28772844257192E-21"
-        izz="1.11714136137616E-05" />
+        ixx="0.000132736560537161"
+        ixy="-3.03740720929472E-21"
+        ixz="1.16913015315812E-05"
+        iyy="0.000108905111851544"
+        iyz="1.10029337805242E-20"
+        izz="0.00016431082681564" />
     </inertial>
 
     <visual>
@@ -418,7 +418,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/back_rotate.STL" />
+        <mesh filename="package://robot_description/meshes/back_link.STL" />
       </geometry>
       <material
         name="">
@@ -432,7 +432,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/back_rotate.STL" />
+        <mesh filename="package://robot_description/meshes/back_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -440,8 +440,8 @@
 
   <joint name="back_rotate_joint" type="continuous">
     <origin
-      xyz="-0.1385 0 -0.00985"
-      rpy="-3.1416 0 -0.20493" />
+      xyz="-0.122 0.00012091 -0.015"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
@@ -454,24 +454,25 @@
   <link name="back_wheel_link">
     <inertial>
       <origin
-        xyz="5.55111512312578E-17 -1.38777878078145E-17 1.66533453693773E-16"
+        xyz="0 -2.70616862252382E-16 6.93889390390723E-18"
         rpy="0 0 0" />
       <mass
-        value="0.0469863288657831" />
+        value="0.192670881607509" />
       <inertia
-        ixx="9.52959905284745E-06"
-        ixy="-1.05879118406788E-22"
-        ixz="-1.8993002353192E-21"
-        iyy="1.44156278093498E-05"
-        iyz="4.98447024365527E-22"
-        izz="9.52959905284745E-06" />
+        ixx="7.63146365292796E-05"
+        ixy="-1.31793032636849E-19"
+        ixz="8.50993400127031E-21"
+        iyy="0.00013627319824331"
+        iyz="-7.98856054603815E-20"
+        izz="7.63146365292796E-05" />
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/back_wheel.STL" />
+        <mesh filename="package://robot_description/meshes/b_wheel_link.STL" />
       </geometry>
       <material
         name="">
@@ -479,12 +480,13 @@
           rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
       </material>
     </visual>
+
     <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_description/meshes/back_wheel.STL" />
+        <mesh filename="package://robot_description/meshes/b_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -492,14 +494,14 @@
 
   <joint name="back_wheel_joint" type="continuous">
     <origin
-      xyz="0.033 0 0.03635"
+      xyz="-0.019817 0 -0.059"
       rpy="0 0 0" />
     <parent
       link="back_rotate_link" />
     <child
       link="back_wheel_link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
   </joint>
 
   <!--=========================gazebo reference/plugin=======================-->
